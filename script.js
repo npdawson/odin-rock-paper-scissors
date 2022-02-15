@@ -11,3 +11,38 @@ function computerPlay() {
         return "Scissors"
     }
 }
+
+/* play a single round of the game. takes the computer's play and the user's play and returns a string that declares the winner*/
+function playRound(playerSelection, computerSelection) {
+    let playerMove = playerSelection.toLowerCase();
+    let computerMove = computerSelection.toLowerCase();
+    switch (playerMove) {
+        case "rock":
+            switch (computerMove) {
+                case "rock":
+                    return "It's a tie! Both players chose Rock!";
+                case "paper":
+                    return "You lose! Paper beats Rock!";
+                case "scissors":
+                    return "You win! Rock beats Scissors!";
+            }
+        case "paper":
+            switch (computerMove) {
+                case "rock":
+                    return "You win! Paper beats Rock!";
+                case "paper":
+                    return "It's a tie! Both players chose Paper!";
+                case "scissors":
+                    return "You lose! Scissors beats Paper!";
+            }
+        case "scissors": 
+            switch (computerMove) {
+                case "rock":
+                    return "You lose! Rock beats Scissors!";
+                case "paper":
+                    return "You win! Scissors beats Paper!";
+                case "scissors":
+                    return "It's a tie! Both players chose Scissors!";
+            }
+    }
+}
