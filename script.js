@@ -12,7 +12,10 @@ function computerPlay() {
     }
 }
 
-/* play a single round of the game. takes the computer's play and the user's play and returns a string that declares the winner*/
+/* 
+ * play a single round of the game. takes the computer's play 
+ * and the user's play and returns a string that declares the winner
+ */
 function playRound(playerSelection, computerSelection) {
     let playerMove = playerSelection.toLowerCase();
     let computerMove = computerSelection.toLowerCase();
