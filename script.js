@@ -46,3 +46,35 @@ function playRound(playerSelection, computerSelection) {
             }
     }
 }
+
+/*Play 5 rounds, keeping score for the player and computer, and report a winner*/
+function game() {
+    let rounds = 5;
+    let playerScore = 0;
+    let computerScore = 0;
+
+    let playerMove;
+    let computerMove;
+    let playMessage;
+
+    for (let i = 0; i < rounds; i++) {
+        playerMove = window.prompt(`Round ${i + 1}! Choose your play!`);
+        computerMove = computerPlay();
+        playMessage = playRound(playerMove, computerMove);
+        console.log(playMessage);
+        if (playMessage.search("win") != -1) {
+            playerScore++;
+        } else if (playMessage.search("lose") != -1) {
+            computerScore++;
+        }
+    }
+    
+    console.log(`Computer won ${computerScore} games and player won ${playerScore} games.`);
+    if (computerScore > playerScore) {
+        console.log("You lose!");
+    } else if (computerScore < playerScore) {
+        console.log("You win!");
+    } else {
+        console.log("It was a tie!");
+    }
+}
