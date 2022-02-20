@@ -52,7 +52,8 @@ function playRound(playerSelection, computerSelection) {
 
 function registerMove(e) {
     let result = playRound(this.id, computerPlay());
-    console.log(result);
+    const resultDiv = document.querySelector('#results');
+    resultDiv.textContent = result;
 }
 
 const buttons = document.querySelectorAll('#buttons button');
