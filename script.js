@@ -49,3 +49,11 @@ function playRound(playerSelection, computerSelection) {
             }
     }
 }
+
+function registerMove(e) {
+    let result = playRound(this.id, computerPlay());
+    console.log(result);
+}
+
+const buttons = document.querySelectorAll('#buttons button');
+buttons.forEach(button => button.addEventListener('click', registerMove));
